@@ -157,13 +157,13 @@ const HeaderOne = ({
                 <ul>
                   <li style={{ width: '33%', textAlign: 'center' }}>
                     {' '}
-                    <a href={`/`}>
+                    <a href={`/page/account/login`}>
                       {' '}
                       <FormattedMessage id="로그인" />
                     </a>
                   </li>
                   <li style={{ width: '33%', textAlign: 'center' }}>
-                    <a href={`/product-details/18`}>
+                    <a href={`/page/account/register`}>
                       {' '}
                       <FormattedMessage id="회원가입" />
                     </a>
@@ -232,42 +232,89 @@ const HeaderOne = ({
           <Row>
             <Col lg="12">
               <div>
-              <ul>
-
-              <li style={{ textAlign: 'center', width:"100%" , marginTop:"10px", paddingBottom:"10px", borderBottom:"1px solid rgb(222 226 230 / 22%)"}}>
+                <ul>
+                  <li
+                    style={{
+                      textAlign: 'center',
+                      width: '100%',
+                      marginTop: '10px',
+                      paddingBottom: '10px',
+                      borderBottom: '1px solid rgb(222 226 230 / 22%)',
+                    }}
+                  >
                     {' '}
                     <a href={`/`}>
                       {' '}
                       <FormattedMessage id="프로젝트" />
                     </a>
                   </li>
-                <li style={{ textAlign: 'center', width:"100%" , marginTop:"10px", paddingBottom:"10px", borderBottom:"1px solid rgb(222 226 230 / 22%)"}}>
+                  <li
+                    style={{
+                      textAlign: 'center',
+                      width: '100%',
+                      marginTop: '10px',
+                      paddingBottom: '10px',
+                      borderBottom: '1px solid rgb(222 226 230 / 22%)',
+                    }}
+                  >
                     <a href={`/product-details/18`}>
                       {' '}
                       <FormattedMessage id="디스커버" />
                     </a>
                   </li>
-                <li style={{ textAlign: 'center', width:"100%" , marginTop:"10px", paddingBottom:"10px", borderBottom:"1px solid rgb(222 226 230 / 22%)"}}>
+                  <li
+                    style={{
+                      textAlign: 'center',
+                      width: '100%',
+                      marginTop: '10px',
+                      paddingBottom: '10px',
+                      borderBottom: '1px solid rgb(222 226 230 / 22%)',
+                    }}
+                  >
                     <a href={`/`}>
                       {' '}
                       <FormattedMessage id="어바웃" />
                     </a>
                   </li>
-                <li style={{ textAlign: 'center', width:"100%" , marginTop:"10px", paddingBottom:"10px", borderBottom:"1px solid rgb(222 226 230 / 22%)"}}>
+                  <li
+                    style={{
+                      textAlign: 'center',
+                      width: '100%',
+                      marginTop: '10px',
+                      paddingBottom: '10px',
+                      borderBottom: '1px solid rgb(222 226 230 / 22%)',
+                    }}
+                  >
                     {' '}
-                    <a href={`/`}>
+                    <a href={`/page/account/login`}>
                       {' '}
                       <FormattedMessage id="로그인" />
                     </a>
                   </li>
-                  
-                <li style={{ textAlign: 'center', width:"100%" , marginTop:"10px", paddingBottom:"10px", borderBottom:"1px solid rgb(222 226 230 / 22%)"}}>
-                    <a href={`/product-details/18`}>
+
+                  <li
+                    style={{
+                      textAlign: 'center',
+                      width: '100%',
+                      marginTop: '10px',
+                      paddingBottom: '10px',
+                      borderBottom: '1px solid rgb(222 226 230 / 22%)',
+                    }}
+                  >
+                    <a href={`/page/account/register`}>
                       {' '}
                       <FormattedMessage id="회원가입" />
                     </a>
                   </li>
-                <li style={{ textAlign: 'center', width:"100%" , marginTop:"10px", paddingBottom:"10px", borderBottom:"1px solid rgb(222 226 230 / 22%)"}}>
+                  <li
+                    style={{
+                      textAlign: 'center',
+                      width: '100%',
+                      marginTop: '10px',
+                      paddingBottom: '10px',
+                      borderBottom: '1px solid rgb(222 226 230 / 22%)',
+                    }}
+                  >
                     {router.locale == 'ko' ? (
                       <Link href={router.asPath} locale="en">
                         ENGLISH
