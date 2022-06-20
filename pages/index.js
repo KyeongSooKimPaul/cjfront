@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Banner from './layouts/Fashion/Components/Banner'
 import CollectionBanner from './layouts/Fashion/Components/Collection-Banner'
 import TopCollection from '../components/common/Collections/Collection3'
@@ -27,28 +27,35 @@ import Paragraph3 from '../components/common/Paragraph3'
 import ModalComponent from '../components/common/Modal'
 import Helmet from 'react-helmet'
 import MasterFooter from '../components/footers/common/MasterFooter'
+import Link from 'next/link'
+// import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next'
+import { useRouter } from 'next/router'
+
+import { FormattedMessage } from 'react-intl'
 
 const Fashion = () => {
+  // const { t } = useTranslation('common')
+
   return (
     <>
       <Helmet>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link
-          rel="icon"
-          type="image/x-icon"
-          href={'/assets/images/favicon/1.png'}
-        />
+        <link rel="icon" type="image/x-icon" href={'/favicon.ico'} />
       </Helmet>
       {/*  */}
       <HeaderOne logoName={'logo.png'} topClass="top-header" />
       <Banner />
       {/* <CollectionBanner /> */}
+      {/* {t('translate.example1')} */}
 
       <Paragraph
         title="title1 section-t-space"
         inner="title-inner1"
         hrClass={false}
+        // lang={t('translate.example1')}
       />
+
       <TopCollection
         noTitle="null"
         backImage={true}
@@ -59,8 +66,9 @@ const Fashion = () => {
         designClass="section-b-space p-t-0 ratio_asos"
         noSlider="false"
         cartClass="cart-info cart-wrap"
+        // lang1={t('translate.example1')}
       />
-        <TopCollection1
+      <TopCollection1
         noTitle="null"
         backImage={true}
         type="fashion"
@@ -72,11 +80,12 @@ const Fashion = () => {
         cartClass="cart-info cart-wrap"
       />
 
-      <Paragraph2
+     <Paragraph2
         title="title1 section-t-space"
         inner="title-inner1"
         hrClass={false}
       />
+ {/* 
       <TopCollection2
         noTitle="null"
         backImage={true}
@@ -104,9 +113,8 @@ const Fashion = () => {
         designClass="section-b-space p-t-0 ratio_asos"
         noSlider="false"
         cartClass="cart-info cart-wrap"
-      />
-    
-   
+      /> */}
+
       {/* <Instagram type="fashion" /> */}
       {/* <div className="section-b-space">
         <LogoBlock />
@@ -122,5 +130,12 @@ const Fashion = () => {
     </>
   )
 }
-
+// export const getStaticProps = async ({ locale }) => {
+//   console.log('locale of getStaticProps!!', locale)
+//   return {
+//     props: {
+//       ...(await serverSideTranslations(locale, ['common'])),
+//     },
+//   }
+// }
 export default Fashion

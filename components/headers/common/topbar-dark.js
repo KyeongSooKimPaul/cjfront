@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col } from 'reactstrap'
+import { Container, Row, Col, Button } from 'reactstrap'
 import Link from 'next/link'
 import firebase from '../../../config/base'
 import { useRouter } from 'next/router'
@@ -43,19 +43,26 @@ const TopBarDark = ({ topClass, fluid }) => {
                 </Link>
               </li>
               <li className="onhover-dropdown mobile-account">
+                <Link href={router.asPath} locale="en">
+                  <Button>영어</Button>
+                </Link>
+                <Link href={router.asPath} locale="ko">
+                
+                  <Button>한국어</Button>
+                </Link>
+              </li>
+              <li className="onhover-dropdown mobile-account">
                 <Link href={`/page/account/profile`}>
                   <a></a>
                 </Link>
               </li>
               <li className="onhover-dropdown mobile-account">
-                
-                <i className="fa fa-user" aria-hidden="true"></i> 
-                
+                <i className="fa fa-user" aria-hidden="true"></i>
+
                 <Link href={`/page/account/login`}>
                   <a> 마이 페이지</a>
                 </Link>
-                
-               
+
                 {/* <ul className="onhover-show-div">
                   <li>
                     <Link href={`/page/account/profile`}>

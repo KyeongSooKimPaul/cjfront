@@ -19,7 +19,7 @@ const MasterCategory = ({ img, title, link }) => {
     <div className="category-block">
       <a href={link}>
         <div className="category-image">
-          <Media src={img} alt="" />
+          <Media style={{height:"auto"}} src={img} alt="" />
         </div>
       </a>
       <div className="category-details">

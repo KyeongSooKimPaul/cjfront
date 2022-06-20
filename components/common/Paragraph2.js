@@ -6,11 +6,52 @@ const Paragraph2 = ({ title, inner, line, hrClass }) => {
     <>
       <Container>
         <Row>
-          <Col lg="12" className="m-auto">
+          <Col lg="12" className="m-auto text-center">
             <div className="product-para">
-              <h3 style={{ marginTop: '100px', marginBottom: '30px' }}>
-                오픈 예정 프로젝트
-              </h3>
+              <a
+                href="/"
+                target="_blank"
+                className="btn btn-solid"
+                style={{
+                  fontSize: '24px',
+                  marginTop: '100px',
+                  marginBottom: '30px',
+                }}
+              >
+                프로젝트 열기
+              </a>
+            </div>
+          </Col>
+          <Col lg="12" className="m-auto text-center">
+            <div className="product-para">
+              <a
+                href="/"
+                target="_blank"
+                className="btn btn-solid"
+                style={{
+                  fontSize: '24px',
+                  marginTop: '100px',
+                  marginBottom: '30px',
+                }}
+              >
+                서비스 설문조사
+              </a>
+            </div>
+          </Col>
+          <Col lg="12" className="m-auto text-center">
+            <div className="product-para">
+              <a
+                href="/"
+                target="_blank"
+                className="btn btn-solid"
+                style={{
+                  fontSize: '24px',
+                  marginTop: '100px',
+                  marginBottom: '30px',
+                }}
+              >
+                Legatist 소개
+              </a>
             </div>
           </Col>
         </Row>

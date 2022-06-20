@@ -21,6 +21,10 @@ body {
   }
 }
 
+
+
+
+
 @media (min-width: 1430px) {
   .container {
     max-width: 1400px;
@@ -4519,7 +4523,20 @@ body {
   }
 }
 
-@media (max-width: 577px) {
+@media (min-width: 992px) {
+.pcforheader{
+  display: block;
+}.mobileforheader{
+  display: none;
+}
+}
+
+@media (max-width: 991px) {
+  .pcforheader{
+    display: none;
+  }.mobileforheader{
+    display: block;
+  }
   header {
     &.header-gym {
       position: relative;
@@ -5367,8 +5384,10 @@ body {
     padding-right: 0 !important;
   }
   .modal-dialog {
-    margin: 0.5rem;
+    margin: 0;
   }
+  
+
   .detail-cannabis {
     .detail_section {
       > div {

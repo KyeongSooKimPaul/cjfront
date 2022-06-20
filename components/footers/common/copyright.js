@@ -11,7 +11,7 @@ const CopyRight = ({ layout, fluid }) => {
               <div className="footer-end">
                 <p>
                   <i className="fa fa-copyright" aria-hidden="true"></i> 모든
-                  저작권은 LOGATIST에게 있습니다
+                  저작권은 LEGATIST에게 있습니다
                 </p>
               </div>
             </Col>

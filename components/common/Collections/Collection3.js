@@ -1,15 +1,13 @@
-import React, { useContext, useEffect, useState } from "react";
-import Slider from "react-slick";
-import { useQuery } from "@apollo/client";
-import { gql } from "@apollo/client";
-import ProductItems from "../product-box/ProductBox1";
-import { Row, Col, Container } from "reactstrap";
-import CartContext from "../../../helpers/cart";
-import { WishlistContext } from "../../../helpers/wishlist/WishlistContext";
-import PostLoader from "../PostLoader";
-import { CompareContext } from "../../../helpers/Compare/CompareContext";
-
-
+import React, { useContext, useEffect, useState } from 'react'
+import Slider from 'react-slick'
+import { useQuery } from '@apollo/client'
+import { gql } from '@apollo/client'
+import ProductItems from '../product-box/ProductBox1'
+import { Row, Col, Container } from 'reactstrap'
+import CartContext from '../../../helpers/cart'
+import { WishlistContext } from '../../../helpers/wishlist/WishlistContext'
+import PostLoader from '../PostLoader'
+import { CompareContext } from '../../../helpers/Compare/CompareContext'
 
 const QUERY_PROUDCTSBYIDFIRSTMUTATION2 = gql`
   query productpage {
@@ -23,7 +21,7 @@ const QUERY_PROUDCTSBYIDFIRSTMUTATION2 = gql`
         category
         price
         newproduct
-        sale,
+        sale
         stock
         discount
         variants
@@ -64,7 +62,7 @@ const GET_PRODUCTS = gql`
       }
     }
   }
-`;
+`
 
 const TopCollection = ({
   type,
@@ -79,12 +77,13 @@ const TopCollection = ({
   innerClass,
   inner,
   backImage,
+ 
 }) => {
-  const context = useContext(CartContext);
-  const contextWishlist = useContext(WishlistContext);
-  const comapreList = useContext(CompareContext);
-  const quantity = context.quantity;
-  const [delayProduct, setDelayProduct] = useState(true);
+  const context = useContext(CartContext)
+  const contextWishlist = useContext(WishlistContext)
+  const comapreList = useContext(CompareContext)
+  const quantity = context.quantity
+  const [delayProduct, setDelayProduct] = useState(true)
 
   // var { loading, data } = useQuery(GET_PRODUCTS, {
   //   variables: {
@@ -94,36 +93,33 @@ const TopCollection = ({
   //   },
   // });
 
-
   var { loading, data, error } = useQuery(QUERY_PROUDCTSBYIDFIRSTMUTATION2, {
     variables: {
       id: 1,
-    }
+    },
   })
-
 
   useEffect(() => {
     if (data === undefined) {
-      noSlider === false;
+      noSlider === false
     } else {
-      noSlider === true;
+      noSlider === true
     }
     setTimeout(() => {
-      setDelayProduct(false);
-    }, 1);
-  }, [delayProduct]);
-  
+      setDelayProduct(false)
+    }, 1)
+  }, [delayProduct])
+
   useEffect(() => {
     if (data) {
-    //  console.log("dddd", data)
-    } 
-  }, [data]);
+      //  console.log("dddd", data)
+    }
+  }, [data])
   useEffect(() => {
     if (error) {
-     console.log("ddderrord", error)
-    } 
-  }, [error]);
-
+      console.log('ddderrord', error)
+    }
+  }, [error])
 
   return (
     <>
@@ -132,11 +128,11 @@ const TopCollection = ({
           <Container>
             <Row>
               <Col>
-                {noTitle === "null" ? (
-                  ""
+                {noTitle === 'null' ? (
+                  ''
                 ) : (
                   <div className={innerClass}>
-                    {subtitle ? <h4>{subtitle}</h4> : ""}
+                    {subtitle ? <h4>{subtitle}</h4> : ''}
                     <h2 className={inner}>{title}</h2>
                     {titleClass ? (
                       <hr role="tournament6" />
@@ -165,19 +161,18 @@ const TopCollection = ({
                   <Slider {...productSlider} className="product-m no-arrow">
                     {data &&
                       data.productpage.Product?.map((product, i) => (
-                       
                         <div key={i}>
-                      
                           <ProductItems
                             product={product}
                             title={title}
-                           addWishlist={() =>
-                             contextWishlist.addToWish(product)
-                           }
+                            addWishlist={() =>
+                              contextWishlist.addToWish(product)
+                            }
                             addCart={() => context.addToCart(product, quantity)}
                             addCompare={() => comapreList.addToCompare(product)}
                             cartClass={cartClass}
                             backImage={backImage}
+                         
                           />
                         </div>
                       ))}
@@ -195,7 +190,7 @@ const TopCollection = ({
                 <hr role="tournament6" />
               </div>
             ) : (
-              ""
+              ''
             )}
             <Container>
               <Row className="margin-default">
@@ -243,7 +238,7 @@ const TopCollection = ({
         )}
       </section>
     </>
-  );
-};
+  )
+}
 
-export default TopCollection;
+export default TopCollection

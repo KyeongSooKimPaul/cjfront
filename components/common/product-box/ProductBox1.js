@@ -18,6 +18,7 @@ const ProductItem = ({
   productDetail,
   addCompare,
   title,
+  
 }) => {
   // eslint-disable-next-line
   const router = useRouter()
@@ -187,6 +188,7 @@ const ProductItem = ({
         title={title}
         des={des}
         variantChangeByColor={variantChangeByColor}
+       
       />
       <Modal
         isOpen={modal}

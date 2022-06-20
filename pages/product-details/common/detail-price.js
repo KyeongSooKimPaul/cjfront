@@ -14,8 +14,17 @@ import CartContext from '../../../helpers/cart'
 import CountdownComponent from '../../../components/common/widgets/countdownComponent'
 import MasterSocial from './master_social'
 import { start } from 'nprogress'
+// import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next'
+import { useParams } from 'react-router-dom'
+import { FormattedMessage } from "react-intl";
+import { useRouter } from 'next/router';
+
 
 const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
+  const router = useRouter();
+  const id = router.query.id;
+  console.log("props.", useParams())
   const [modal, setModal] = useState(false)
   const CurContect = useContext(CurrencyContext)
   const symbol = CurContect.state.symbol
@@ -46,12 +55,16 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
   const changeQtyforkeep = (e) => {
     setQuantityforkeep(parseInt(e.target.value))
   }
+console.log("router.pathname1",router.asPath)
+console.log("router.pathname1",id)
+
 
   return (
     <>
+    
       <div className={`product-right ${stickyClass}`}>
         <h2> {product.title} </h2>
-
+      
         <div className="border-product">
           <div
             style={{
@@ -64,7 +77,7 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
               style={{ color: 'white', float: 'left' }}
               className="product-title"
             >
-              프로젝트 리더
+              <FormattedMessage id="프로젝트 리더" />
             </h5>
             <h5
               style={{ color: 'white', float: 'right' }}
@@ -88,7 +101,7 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
               style={{ color: 'white', float: 'left' }}
               className="product-title"
             >
-                프로젝트 분야
+                 <FormattedMessage id="프로젝트 타입" />
             </h5>
             <h5
               style={{ color: 'white', float: 'right' }}
@@ -288,5 +301,15 @@ const DetailsWithPrice = ({ item, stickyClass, changeColorVar }) => {
     </>
   )
 }
+
+
+// export const getStaticProps = async ({ locale }) => {
+//   console.log('locale of getStaticProps!!', locale)
+//   return {
+//     props: {
+//       ...(await serverSideTranslations(locale, ['common'])),
+//     },
+//   }
+// }
 
 export default DetailsWithPrice

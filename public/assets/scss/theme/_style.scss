@@ -47,7 +47,10 @@
     1.General CSS start
 ==========================*/
 body {
-  font-family: $font_0, $font_1;
+  // font-family: $font_0, $font_1;
+
+  font-family: 'Chub Gothic','NanumSquareRoundR','Apple SD Gothic Neo', 'Malgun Gothic','Nanum Gothic', 'Noto Sans','sans-serif';
+
   position: relative;
   background: $white;
   font-size: 14px;
@@ -516,7 +519,7 @@ del {
 }
 
 .progress-bar {
-  background-color: #6610f2;
+  background-color: #ff3d3d;
 }
 
 .progress-bar-info {
@@ -670,13 +673,13 @@ button {
   padding: 13px 29px;
   color: $white !important;
   letter-spacing: 0.05em;
-  border: 2px solid #6610f2;
+  border: 2px solid #ff3d3d;
   background-image: -webkit-linear-gradient(
     30deg,
-    #6610f2 50%,
+    #ff3d3d 50%,
     transparent 50%
   );
-  background-image: linear-gradient(30deg, #6610f2 50%, transparent 50%);
+  background-image: linear-gradient(30deg, #ff3d3d 50%, transparent 50%);
   background-size: 540px;
   background-repeat: no-repeat;
   background-position: 0;
@@ -957,7 +960,7 @@ button {
       position: absolute;
       height: 5px;
       width: 70px;
-      background-color: #6610f2;
+      background-color: #ff3d3d;
       content: '';
       left: 0;
       right: 0;
@@ -1764,7 +1767,7 @@ header {
 .main-menu {
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   z-index: 9;
   height: 80px;
@@ -3723,7 +3726,7 @@ header {
 
         .overlay-background {
           transform: scale(1);
-          border: 3px solid white;
+          border: none;
           position: absolute;
           left: 0;
           top: 0;
@@ -9405,7 +9408,7 @@ footer {
     transform: translate(-50%, -50%);
     width: 50px;
     height: 50px;
-    background-color: #6610f2;
+    background-color: #ff3d3d;
     border-radius: 50%;
 
     &:after {
@@ -9488,7 +9491,7 @@ footer {
   display: none;
   color: #fff;
   text-align: center;
-  background: #6610f2;
+  background: #ff3d3d;
   border: none;
   font-size: 22px;
   padding: 7px;
@@ -12569,6 +12572,7 @@ footer {
 
     .slick-slide img {
       display: block;
+      border-radius: 20px !important;
     }
 
     .product-details {
@@ -12776,6 +12780,7 @@ footer {
   max-width: 100% !important;
   object-position: center center !important;
   object-fit: cover !important;
+  border-radius: 20px;
 }
 
 .order-box {
@@ -13544,8 +13549,10 @@ footer {
     }
 
     img {
-      width: 100%;
-      height: auto;
+      width: 150px;
+      height: 150px;
+      margin: auto;
+      border-radius: 10000px;
     }
   }
 

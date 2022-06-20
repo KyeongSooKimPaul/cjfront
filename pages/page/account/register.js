@@ -312,7 +312,7 @@ const Register = () => {
                           className="form-check-label"
                           htmlFor="exampleRadios1"
                         >
-                          LOGATIST <a href="#">이용약관</a> 동의 (필수)
+                          LEGATIST <a href="#">이용약관</a> 동의 (필수)
                         </label>
                       </div>
                       <div className="form-check mb-3">
@@ -380,7 +380,7 @@ const Register = () => {
                 </p>
               </div>
               <div className="mt-2 text-center">
-                <p>© {new Date().getFullYear()} LOGATIST</p>
+                <p>© {new Date().getFullYear()} LEGATIST</p>
               </div>
             </Col>
           </Row>

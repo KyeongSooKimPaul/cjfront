@@ -108,8 +108,8 @@ const MasterFooter = ({
                 >
                   <div className="footer-contant">
                     <div className="footer-logo">
-                      <strong style={{ fontSize: '26px' }}> LOGATIST</strong>
-                      {/* <LogoImage logo={logoName} /> */}
+                      {/* <strong style={{ fontSize: '26px' }}> LEGATIST</strong> */}
+                      <LogoImage logo={logoName} />
                     </div>
                     <p>아티스트 프로젝트 협업 플랫폼</p>
                     <div className="footer-social">
@@ -192,7 +192,6 @@ const MasterFooter = ({
                             <a> 프로젝트 참여 내역 </a>
                           </Link>
                         </li>
-                       
                       </ul>
                     </div>
                   </Collapse>
@@ -222,7 +221,7 @@ const MasterFooter = ({
                   >
                     <div className="footer-contant">
                       <ul>
-                      <li>
+                        <li>
                           <Link href={`/`}>
                             <a>프로젝트 검색</a>
                           </Link>
@@ -232,7 +231,6 @@ const MasterFooter = ({
                             <a> 프로젝트 전체 보기 </a>
                           </Link>
                         </li>
-                       
                       </ul>
                     </div>
                   </Collapse>

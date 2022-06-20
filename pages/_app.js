@@ -14,7 +14,23 @@ import Helmet from 'react-helmet'
 import { ApolloProvider } from '@apollo/client'
 import { useApollo } from '../helpers/apollo'
 
-export default function MyApp({ Component, pageProps }) {
+import { appWithTranslation } from 'next-i18next'
+
+import { useRouter } from 'next/router'
+import { IntlProvider } from 'react-intl'
+
+import en from '../public/locales/en/common.json'
+import ko from '../public/locales/ko/common.json'
+
+const messages = {
+  en,
+  ko,
+}
+
+function MyApp({ Component, pageProps }) {
+  const { locale } = useRouter()
+
+  // export default function MyApp({ Component, pageProps }) {
   const [isLoading, setIsLoading] = useState(true)
   const [url, setUrl] = useState()
   const apolloClient = useApollo(pageProps)
@@ -57,7 +73,7 @@ export default function MyApp({ Component, pageProps }) {
               {/* <Head>
               <link rel="icon" type="image/x-icon" href={favicon} />
             </Head> */}
-              <title>LOGATIST - 일상에 활력을 더하다</title>
+              <title>LEGATIST - 일상에 활력을 더하다</title>
             </Helmet>
             <div>
               <SettingProvider>
@@ -66,7 +82,12 @@ export default function MyApp({ Component, pageProps }) {
                     <CartContextProvider>
                       <WishlistContextProvider>
                         <FilterProvider>
-                          <Component {...pageProps} />
+                          <IntlProvider
+                            locale={locale}
+                            messages={messages[locale]}
+                          >
+                            <Component {...pageProps} />
+                          </IntlProvider>
                         </FilterProvider>
                       </WishlistContextProvider>
                     </CartContextProvider>
@@ -83,3 +104,4 @@ export default function MyApp({ Component, pageProps }) {
     </>
   )
 }
+export default MyApp

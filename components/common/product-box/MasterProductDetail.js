@@ -10,6 +10,7 @@ const MasterProductDetail = ({
   title,
   des,
   variantChangeByColor,
+  
 }) => {
   let RatingStars = [];
   let rating = 5;

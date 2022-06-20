@@ -162,11 +162,12 @@ export const Product7 = {
 };
 
 export const Product5 = {
-  dots: false,
+  dots: true,
   infinite: true,
+  arrows: true,
   speed: 300,
-  slidesToShow: 6,
-  slidesToScroll: 6,
+  slidesToShow: 7,
+  slidesToScroll: 7,
   responsive: [
     {
       breakpoint: 1367,
