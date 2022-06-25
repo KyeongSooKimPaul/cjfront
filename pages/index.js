@@ -49,12 +49,12 @@ const Fashion = () => {
       {/* <CollectionBanner /> */}
       {/* {t('translate.example1')} */}
 
-      <Paragraph
+      {/* <Paragraph
         title="title1 section-t-space"
         inner="title-inner1"
         hrClass={false}
-        // lang={t('translate.example1')}
-      />
+
+      /> */}
 
       <TopCollection
         noTitle="null"
@@ -68,7 +68,7 @@ const Fashion = () => {
         cartClass="cart-info cart-wrap"
         // lang1={t('translate.example1')}
       />
-      <TopCollection1
+      {/* <TopCollection1
         noTitle="null"
         backImage={true}
         type="fashion"
@@ -78,7 +78,7 @@ const Fashion = () => {
         designClass="section-b-space p-t-0 ratio_asos"
         noSlider="false"
         cartClass="cart-info cart-wrap"
-      />
+      /> */}
 
      <Paragraph2
         title="title1 section-t-space"

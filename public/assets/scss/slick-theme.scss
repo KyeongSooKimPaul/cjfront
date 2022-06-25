@@ -100,8 +100,29 @@ $slick-opacity-not-active: 0.25 !default;
     }
 }
 
+.custom1{
+    .slick-prev {
+   
+    
+     &:before {
+        font-size: 30px !important;
+    }
+    }
+}
+
+.custom1{
+    .slick-next {
+   
+        &:before {
+            font-size: 30px !important;
+        }
+    
+    }
+}
 .slick-prev {
     left: 25px;
+    z-index: 10000;
+    
     [dir="rtl"] & {
         left: auto;
         right: 25px;
@@ -116,6 +137,10 @@ $slick-opacity-not-active: 0.25 !default;
 
 .slick-next {
     right: 25px;
+    z-index: 10000;
+    .custom1{
+        top: -100px;
+    }
     [dir="rtl"] & {
         left: 25px;
         right: auto;

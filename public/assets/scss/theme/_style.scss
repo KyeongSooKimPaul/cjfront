@@ -49,7 +49,8 @@
 body {
   // font-family: $font_0, $font_1;
 
-  font-family: 'Chub Gothic','NanumSquareRoundR','Apple SD Gothic Neo', 'Malgun Gothic','Nanum Gothic', 'Noto Sans','sans-serif';
+  font-family: 'Chub Gothic', 'NanumSquareRoundR', 'Apple SD Gothic Neo',
+    'Malgun Gothic', 'Nanum Gothic', 'Noto Sans', 'sans-serif';
 
   position: relative;
   background: $white;
@@ -2425,6 +2426,29 @@ header {
   }
 
   .slider-contain {
+    #custom1 {
+      h1 {
+        margin-bottom: 0;
+        margin-top: 10px;
+        color: black !important;
+        text-align: center !important;
+      }
+
+      h4 {
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        color: black;
+        margin-bottom: 0;
+        text-align: center !important;
+
+        a {
+          border: 1px solid black !important;
+          padding: 10px;
+          border-radius: 10px;
+        }
+      }
+    }
+
     width: 100%;
     height: 75vh;
     // display: flex;
@@ -2434,19 +2458,34 @@ header {
     h1 {
       margin-bottom: 0;
       margin-top: 10px;
-      color: $dark-font;
+      color: white;
+      text-align: left;
+      margin-left: 40px;
     }
 
     h4 {
       font-weight: 700;
-      letter-spacing: 0.4em;
-      color: $grey;
+      letter-spacing: 0.2em;
+      color: white;
       margin-bottom: 0;
+      text-align: left;
+      margin-left: 40px;
+      a {
+        border: 1px solid white !important;
+        padding: 10px;
+        border-radius: 10px;
+      }
     }
 
     .btn-solid,
     .btn-outline {
       margin-top: 20px;
+      a {
+        color: white;
+        text-align: left !important;
+        margin-left: 40px !important;
+        border: 1px solid white !important;
+      }
     }
   }
 
@@ -9454,6 +9493,36 @@ footer {
   height: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
   border-radius: 15px;
   y: calc(220px + (365 - 220) * ((100vw - 320px) / (1920 - 320)));
+}
+
+@keyframes lds-heart {
+  0% {
+    transform: scale(0.95);
+  }
+  5% {
+    transform: scale(1.1);
+  }
+  39% {
+    transform: scale(0.85);
+  }
+  45% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes loading {

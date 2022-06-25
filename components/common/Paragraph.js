@@ -1,9 +1,8 @@
 import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage } from 'react-intl'
 
 const Paragraph = ({ title, inner, line, hrClass }) => {
-
   return (
     <>
       <Container>
@@ -12,7 +11,6 @@ const Paragraph = ({ title, inner, line, hrClass }) => {
             <div className="product-para">
               <h3 style={{ marginTop: '100px', marginBottom: '30px' }}>
                 모집중인 프로젝트
-
               </h3>
               <>
                 {/* <video
@@ -45,6 +43,5 @@ const Paragraph = ({ title, inner, line, hrClass }) => {
     </>
   )
 }
-
 
 export default Paragraph

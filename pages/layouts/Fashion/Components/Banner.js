@@ -7,19 +7,24 @@ import MasterBanner from "./MasterBanner";
 const Data = [
   {
     img: "/assets/images/icon/banner_1.jpg",
-    // title: "건강한 일상",
-    // desc: "렛잇비",
-    // link: "/left-sidebar/collection ",
-    link: "/product-details/19",
+    title: "LEGATIST ORIGINAL",
+    desc: "당신과 함께 할 \n93만 글로벌 팬덤의 \n댄스 스튜디오 ALiEN",
+    link: "/left-sidebar/collection ",
+
     
   },
   {
     img: "/assets/images/icon/banner_2.jpg",
-    // title: "매일이 다른 하루",
-    // desc: "렛잇비",
+    title: "LEGATIST ORIGINAL",
+    desc: "당신과 함께 할 \n93만 글로벌 팬덤의 \n댄스 스튜디오 ALiEN",
     link: "/product-details/18",
   },
- 
+  {
+    img: "/assets/images/icon/banner_3.jpg",
+    title: "LEGATIST ORIGINAL",
+    desc: "당신과 함께 할 \n93만 글로벌 팬덤의 \n댄스 스튜디오 ALiEN",
+    link: "/product-details/18",
+  },
 ];
 
 const Banner = () => {
@@ -30,7 +35,7 @@ const Banner = () => {
           {Data.map((data, i) => {
             return (
               <MasterBanner
-              
+           
                 key={i}
                 img={data.img}
                 desc={data.desc}

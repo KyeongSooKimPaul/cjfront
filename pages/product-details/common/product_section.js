@@ -69,11 +69,15 @@ const ProductSection = () => {
   })
 
   return (
-    <section className="section-b-space ratio_asos">
+    <section className="section-b-space ratio_asos" style={{background:"white"}}>
       <Container>
         <Row>
-          <Col className="product-related">
-            <h3>당신을 기다리는 또 다른 프로젝트</h3>
+          <Col>
+            <h2 style={{ border: 0, color: 'black' }}>MORE PROJECT</h2>
+            <h4 style={{ color: 'black' }}>
+              {' '}
+              더 많은 LEGATIST 프로젝트를 만나보세요
+            </h4>
           </Col>
         </Row>
         <Row className="search-product">
@@ -90,7 +94,7 @@ const ProductSection = () => {
                           <a href={null}>
                             {console.log('data', product)}
                             <Media
-                              style={{ cursor: 'pointer' }}
+                              style={{ cursor: 'pointer' ,borderRadius:"10px" }}
                               onClick={() => clickProductDetail(product)}
                               src={`${
                                 product.images
@@ -154,7 +158,7 @@ const ProductSection = () => {
                           <i className="fa fa-star"></i>
                         </div> */}
                         <a href={null}>
-                          <h6>{product.title}</h6>
+                          <h6 style={{color:"black"}}>{product.title}</h6>
                         </a>
 
                         {/* <ul className="color-variant">

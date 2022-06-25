@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Col, Container, Row } from 'reactstrap'
+import { Col, Container, Row,Button } from 'reactstrap'
 
 const MasterBanner = ({ img, title, desc, link, classes, btn, btnClass }) => {
   return (
@@ -7,7 +7,7 @@ const MasterBanner = ({ img, title, desc, link, classes, btn, btnClass }) => {
     <div>
       <div
         className={`home ${img} ${classes ? classes : 'text-center'}`}
-        style={{ cursor:"pointer", backgroundImage: 'url(' + `${img}` + ')' }}
+        style={{whiteSpace:"pre-wrap", cursor:"pointer", backgroundImage: 'url(' + `${img}` + ')' }}
       >
 
         <Container>
@@ -17,9 +17,10 @@ const MasterBanner = ({ img, title, desc, link, classes, btn, btnClass }) => {
             <Link href={link}>
               <div className="slider-contain">
              
-                  <div>
-                    <h4>{title}</h4>
-                    <h1>{desc}</h1>
+                  <div >
+                    <h4 style={{ color:"white !important", }}>{title}</h4>
+                    <h1 style={{ color:"white !important", }}>{desc}</h1>
+                    <a  href={link}> <h4 ><a>프로젝트 자세히 보기</a></h4></a>
                   </div>
                
               </div>

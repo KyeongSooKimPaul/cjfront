@@ -76,6 +76,51 @@ const NoSidebarPage = () => {
 
   const { nav1, nav2 } = state
 
+  const MasterBanner = ({ img, title, desc, link, classes, btn, btnClass }) => {
+    return (
+      // console.log("dd", link)
+      <div>
+        <div
+          className={`home ${img} ${classes ? classes : 'text-center'}`}
+          style={{
+            whiteSpace: 'pre-wrap',
+            cursor: 'pointer',
+            backgroundImage: 'url(' + `${img}` + ')',
+          }}
+        >
+          <Container>
+            <Row>
+              <Col>
+                <Link href={link}>
+                  <div className="slider-contain" id="custom1">
+                    <div>
+                      <h4
+                        style={{
+                          color: 'black !important',
+                          textAlign: 'center !important',
+                        }}
+                      >
+                        {title}
+                      </h4>
+                      <a href={link}>
+                        {' '}
+                        <h4>
+                          <a style={{ color: 'black !important' }}>
+                            프로젝트 자세히 보기
+                          </a>
+                        </h4>
+                      </a>
+                    </div>
+                  </div>
+                </Link>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <>
       <section className="">
@@ -92,80 +137,53 @@ const NoSidebarPage = () => {
                   ) : (
                     <>
                       <Row>
-                        <Col lg="6" className="product-thumbnail">
+                        <Col lg="12" className="product-thumbnail">
+                          {console.log('ddd', data.product)}
                           <Slider
                             {...products}
                             asNavFor={nav2}
                             ref={(slider) => (slider1.current = slider)}
-                            className="product-slick"
+                            className="slide-1 home-slider"
                           >
-                            {JSON.parse(data.product.images).map(
-                              (vari, index) => (
-                                <div key={index}>
-                                  <ImageZoom image={vari} />
-                                </div>
-                              ),
-                            )}
+                            <MasterBanner
+                              img={JSON.parse(data.product.images)}
+                              title={data.product.title}
+                              link={'/'}
+                            />
                           </Slider>
-                          {/* <Slider
-                            className="slider-nav"
-                            {...productsnav}
-                            asNavFor={nav1}
-                            ref={(slider) => (slider2.current = slider)}
-                          >
-                            {data.product.variants
-                              ? JSON.parse(data.product.images).map(
-                                  (vari, index) => (
-                                    <div key={index}>
-                                      <Media
-                                        src={`${vari}`}
-                                        key={index}
-                                        className="img-fluid"
-                                      />
-                                    </div>
-                                  ),
-                                )
-                              : ''}
-                          </Slider> */}
                         </Col>
-                        <Col lg="6" className="rtl-text">
+                        <Col
+                          lg="12"
+                          className="rtl-text"
+                          style={{ textAlign: 'center', marginTop: '50px' }}
+                        >
                           <DetailsWithPrice
                             changeColorVar={changeColorVar}
                             item={data.product}
                           />
                         </Col>
                       </Row>
-                      <Row>
+                      {/* <Row>
                         <Col lg="12" className="rtl-text">
                           <h3
                             style={{
                               textAlign: 'left',
                               marginTop: '50px',
+
                             }}
                           >
-                            프로젝트 상세 내용
+                           프로젝트 상세 내용
                           </h3>
                           <div
-                          style={{width:"100%"}}
+                            style={{ width: '100%' }}
                             dangerouslySetInnerHTML={{
                               __html: data.product.description,
-                              width:"100%"
+                              width: '100%',
                             }}
                           ></div>
                         </Col>
-                      </Row>
-                      <Row>
-                        <Col lg="12" className="rtl-text">
-                          <h3
-                            style={{
-                              textAlign: 'left',
-                              marginTop: '50px',
-                            }}
-                          >
-                            프로젝트 리더 프로필 보러가기
-                          </h3>
-                        </Col>
-                      </Row>
+                      </Row> */}
+                      {/*                    
                       <Row>
                         <Col lg="12" className="rtl-text">
                           <div className="product-buttons">
@@ -174,7 +192,7 @@ const NoSidebarPage = () => {
                             </a>
                           </div>
                         </Col>
-                      </Row>
+                      </Row> */}
                     </>
                   )}
                 </div>
@@ -264,7 +282,9 @@ const NoSidebarPage = () => {
                             textAlign: 'left',
                           }}
                         >
-                          <h4 style={{ fontWeight: 'bold' }}>선호하는 소통방식</h4>
+                          <h4 style={{ fontWeight: 'bold' }}>
+                            선호하는 소통방식
+                          </h4>
                         </Col>
                         <Col
                           lg="6"
@@ -301,17 +321,14 @@ const NoSidebarPage = () => {
                           </button>
                         </Col>
                         <Col lg="6" xs="6">
-                          <Link
-                            href={`/`}
-                            params={{ product: data.product }}
-                          >
+                          <Link href={`/`} params={{ product: data.product }}>
                             <a
                               className="btn btn-solid"
                               style={{
                                 width: '100%',
                               }}
                             >
-                             참여하기
+                              참여하기
                             </a>
                           </Link>
                         </Col>
@@ -321,9 +338,9 @@ const NoSidebarPage = () => {
                 </Row>
               </ModalBody>
             </Modal>
-          ):(
+          ) : (
             <></>
-          ) }
+          )}
         </div>
       </section>
     </>

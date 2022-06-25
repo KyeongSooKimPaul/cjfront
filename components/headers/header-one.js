@@ -19,6 +19,7 @@ import { useRouter } from 'next/router'
 import SearchOverlay from './common/search-overlay'
 import Link from 'next/link'
 import { FormattedMessage } from 'react-intl'
+import ReactCountryFlag from 'react-country-flag'
 
 const HeaderOne = ({
   logoName,
@@ -168,14 +169,33 @@ const HeaderOne = ({
                       <FormattedMessage id="회원가입" />
                     </a>
                   </li>
+                  <li></li>
                   <li style={{ width: '33%', textAlign: 'center' }}>
                     {router.locale == 'ko' ? (
                       <Link href={router.asPath} locale="en">
-                        ENGLISH
+                        <ReactCountryFlag
+                          countryCode="US"
+                          svg
+                          style={{
+                            width: '26px',
+                            height: '26px',
+                            cursor:"pointer"
+                          }}
+                          title="ENGLISH"
+                        />
                       </Link>
                     ) : (
                       <Link href={router.asPath} locale="ko">
-                        한국어
+                          <ReactCountryFlag
+                          countryCode="KR"
+                          svg
+                          style={{
+                            width: '26px',
+                            height: '26px',
+                            cursor:"pointer"
+                          }}
+                          title="KOREAN"
+                        />
                       </Link>
                     )}
                   </li>
@@ -306,6 +326,7 @@ const HeaderOne = ({
                       <FormattedMessage id="회원가입" />
                     </a>
                   </li>
+
                   <li
                     style={{
                       textAlign: 'center',

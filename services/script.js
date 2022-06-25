@@ -52,12 +52,12 @@ export const tools_product_4 = {
 
 export const Projects = {
   infinite: true,
-  speed: 15000,
-  slidesToShow: 4,
-  slidesToScroll: 4,
-  autoplay: false,
+  speed: 300,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
   arrows: true,
-  autoplaySpeed: 0,
+  autoplaySpeed: 3000,
   cssEase: 'linear' ,
   responsive: [
     {

@@ -77,7 +77,6 @@ const TopCollection = ({
   innerClass,
   inner,
   backImage,
- 
 }) => {
   const context = useContext(CartContext)
   const contextWishlist = useContext(WishlistContext)
@@ -123,11 +122,35 @@ const TopCollection = ({
 
   return (
     <>
-      <section className={designClass}>
+      <section style={{marginTop:"200px"}} className={designClass}>
         {noSlider ? (
           <Container>
             <Row>
-              <Col>
+              <Col xl={4} style={{margin:"auto"}}>
+                <div style={{marginLeft:"40px"}}>
+                <h1>PROJECT</h1>
+                <h4 style={{ lineHeight: '2em' , marginBottom:"30px"}}>
+                  당신을 찾는 프로젝트에 지원하고 <br />
+                  시너지 넘치는 콜라보레이션 기회를 잡으세요
+                </h4>
+                <a href={'/'} >
+                  {' '}
+                  <h4>
+                    <a
+                      style={{
+                        border: '1px solid white',
+                        borderRadius: '10px',
+                        padding: '10px',
+                        
+                      }}
+                    >
+                      전체 프로젝트 보기
+                    </a>
+                  </h4>
+                </a>
+                </div>
+              </Col>
+              <Col xl={8}>
                 {noTitle === 'null' ? (
                   ''
                 ) : (
@@ -158,7 +181,7 @@ const TopCollection = ({
                     </div>
                   </div>
                 ) : (
-                  <Slider {...productSlider} className="product-m no-arrow">
+                  <Slider {...productSlider} className="product-m custom1">
                     {data &&
                       data.productpage.Product?.map((product, i) => (
                         <div key={i}>
@@ -172,7 +195,6 @@ const TopCollection = ({
                             addCompare={() => comapreList.addToCompare(product)}
                             cartClass={cartClass}
                             backImage={backImage}
-                         
                           />
                         </div>
                       ))}
